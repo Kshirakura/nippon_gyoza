@@ -1,0 +1,577 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Shippori+Mincho+B1:wght@500&display=swap');
+
+
+/* モバイルファーストで書いてみます */
+
+/* ------------
+全体
+------------ */
+
+html {
+  font-size:62.5%;
+}
+
+body {
+  width: 94%;
+  margin: 0 auto;
+  font-family: 'Shippori Mincho B1', serif;
+  background: #f0f0e0;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+main {
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align:bottom;
+}
+
+h2 {
+  font-size: 2.0rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'RocknRoll One', sans-serif;
+}
+
+  /* -----------
+  gifs
+  ------------ */
+
+  .gif {
+    position: absolute;
+    z-index: -10;
+
+  } 
+
+  .gifs img {
+    width: 230px;
+    height: 230px;
+    opacity: 0.2;
+  }
+
+  .gifs .cabagge {
+    top: 40px;
+  }
+
+  .gifs .hakusai {
+    top: 430px;
+    right: auto;
+    left: auto;
+  }
+
+  .gifs .onion {
+    right: 0px;
+    top: 180px;
+  }
+
+  .gifs .shiso {
+    right: 0px;
+    top: 550px;
+  }
+
+
+
+
+/* --------
+シェアボタン
+--------*/
+.sns-btn {
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.sns-btn div {
+  margin-right: 20px;
+}
+
+/* --------
+上へボタン
+--------*/
+#page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  line-height: 1;
+  z-index: 99;
+}
+#page-top a {
+  /* background: #E83828; */
+  text-decoration: none;
+  color: #fff;
+  width: 40px;
+  padding: 10px 8px 14px;
+  text-align: center;
+  display: block;
+  border-radius: 5%;
+  opacity: 0.9;
+  transition: all .3s ease;
+}
+#page-top a:hover {
+  text-decoration: none;
+  opacity: .7;
+}
+
+/* --------
+inview用
+--------*/
+
+.fadeIn {
+  transform: translate(0, 20%);
+  transition: 0.4s ease;
+}
+.fadeIn.is-show {
+  transform: translate(0, 0);
+}
+
+/* --------
+header 
+--------*/
+
+#header .site-title img{
+  width: 180px;
+  display: block;
+}
+
+.flex-items {
+  position: relative;
+}
+
+#header{
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  z-index:20;
+}
+
+.mainvisual {
+  padding-top: 150px;
+  margin-bottom: 30px;
+}
+
+.steam {
+  position: absolute;
+  animation: steam-up 1.2s linear 0.5s;
+  opacity: 0;
+}
+
+@keyframes steam-up {
+  0% { top: 400px;
+       opacity: 0;}
+  50% { top: 180px;
+       opacity: 1;}
+  100% { top: 0px;
+       opacity: 0;}
+}
+
+.copy {
+  margin-bottom: 60px
+}
+
+.copy h2 {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  transform: translate(5%, 0);
+}
+
+.shop-name {
+  text-align: center;
+  width: 180px;
+  margin: 0 auto 120px;
+}
+
+/* --------
+container
+--------*/
+.container {
+  margin-bottom: 60px;
+}
+
+.heart {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.heart h2 a{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  z-index: 20;
+}
+
+.online_iiyasai {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.online {
+  height: 300px;
+  width: 49%;
+  position: relative;
+}
+
+.online h2 {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.iiyasai {
+  height: auto;
+  width: 49%;
+  position: relative;
+}
+
+.iiyasai h2 {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.policy {
+  margin-bottom: 60px;
+}
+
+.policy h2 {
+  margin-bottom: 15px;
+}
+
+.policy .flex-items {
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.policy img {
+  margin-bottom: 15px;
+}
+
+.news {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  margin-bottom: 60px;
+  text-align: center;
+  background: #ffe;
+}
+
+.news h2 {
+  margin-bottom: 15px;
+}
+
+.news dl {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.news dt {
+  text-align: center;
+  /* width: 18%; */
+}
+
+.news dd {
+  /* width: 78%; */
+  /* text-align: left; */
+  margin-bottom: 20px;
+}
+
+.recommend {
+  margin-bottom: 60px;
+}
+
+.recommend h2 {
+  margin-bottom: 15px;
+}
+
+.recommend .flex-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.recommend .item {
+  width: 49%;
+  margin-bottom: 30px;
+}
+
+.recommend .item img {
+  margin-bottom: 5px;
+}
+
+/*--------
+SNSボタン
+------ */
+
+.sns-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.sns-btn div {
+  margin-right: 20px;
+}
+
+
+/*--------
+footer
+------ */
+#footer {
+  width: 180px;
+}
+
+@media (min-width: 768px) {
+      /*--------
+    mainvisual
+    ------ */
+    .mainvisual {
+      padding-top: 150px;
+      margin-bottom: 60px;
+      width: 450px;
+      margin: 0 auto 50px;
+    }
+
+    .copy p{
+      font-size: 4.0rem;
+      width: 400px;
+    }
+
+    .shop-name {
+      font-size: 1.2rem;
+    }
+
+        /*--------
+    container
+    ------ */
+
+    .container > .flex-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 60px;
+    }
+
+    .heart {
+      width: 48%;
+      margin:0;
+    }
+    
+    .heart h2 {
+      top: 30px;
+      left: 30px;
+      font-size: 3.0rem;
+    }
+    
+    .online_iiyasai {
+      flex-direction:column;
+      margin-bottom: 0;
+      width: 49%;
+      justify-content: space-between;
+    }
+
+
+    .online_iiyasai h2 {
+      top: 24px;
+      left: 24px;
+      font-size: 1.8rem;
+    }
+
+    .online {
+      width: 100%;
+      height: 47%;
+      background-image: url(../img/online-long.png);
+      background-size: cover;
+    }
+
+    .online img {
+      display: none;
+    }
+
+
+    .iiyasai {
+      width: 100%;
+      height: 47%;
+      background-image: url(../img/iiyasai.png);
+      background-size: cover;
+    }
+
+    .iiyasai img {
+      display: none;
+    }
+
+    .policy .flex-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .policy .item {
+      width: 48%;
+    }
+
+    .policy h2 {
+      font-size: 3.0rem;
+    }
+
+    .policy h3 {
+      font-size:2.0rem;
+    }
+
+    .news h2 {
+      font-size: 2.4rem;
+    }
+
+    .news dl {
+      display: flex;
+      flex-wrap: wrap;
+      width: 600px;
+      margin: 0 auto 10px;
+      justify-content: space-between;
+      background: #ffe;
+      padding: 30px;
+      line-height: 2.4rem;
+      border: dashed 1px #ccc;
+    }
+
+    .news dt {
+      width: 20%;
+    }
+
+    .news dd {
+      width: 80%;
+      text-align: center;
+      border-left: dashed 1px #444;
+    }
+
+
+
+    .recommend h2{
+      font-size: 2.4rem;
+    }
+
+    .recommend .item {
+      width: 24%;
+    }
+
+
+        /*--------
+    news
+    ------ */
+        /*--------
+    news
+    ------ */
+        /*--------
+    news
+    ------ */
+}
+
+@media (min-width: 1025px) {
+
+  body {
+    width: 1020px;
+    margin: 0 auto;
+  }
+
+  .mainvisual {
+    margin: 0 60px 0 0;
+    padding: 0;
+  }
+
+  .steam {
+    position: absolute;
+    animation: steam-up 1.0s linear 0.5s;
+    opacity: 0;
+  }
+  
+  @keyframes steam-up {
+    0% { top: 200px;
+         opacity: 0;}
+    50% { top: 0px;
+         opacity: 1;}
+    100% { top: -200px;
+         opacity: 0;}
+  }
+
+  .gifs .onion {
+    right: 0px;
+    top: 0px;
+  }
+
+  .gifs .shiso {
+    right: 0px;
+    top: 300px;
+  }
+  
+  main > .flex-items {
+    display: flex;
+    align-items: center;
+    margin: 90px 0 120px;
+    justify-content: center;
+  }
+
+  main > .flex-item .item {
+    width: 49%;
+  }
+
+  .copy {
+    padding-top: 60px;
+  }
+
+  .copy h2 {
+    font-size: 3rem;
+    width: 300px;
+    transform: translate(3%, 0);
+  }
+
+
+
+  .shop-name {
+    margin-right: 0;
+    margin-left: 0;
+    margin: 0 auto;
+    width: 250px;
+  }
+
+  .shop-name h1 {
+    margin: 0;
+    width: 250px;
+  }
+    /*--------
+    news
+    ------ */
+    /*--------
+    news
+    ------ */
+
+    
+
+}
+

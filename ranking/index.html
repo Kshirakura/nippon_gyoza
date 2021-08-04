@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="i am dummy fashion site ranking">
+    <title>Fash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/rankingstyles.css"><link rel="stylesheet" type="text/css" href="../css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/slick-theme.css"/>
+
+  </head>
+  <body>
+    <header id="header"  class="flex-items">
+      <h1 class="site-title">
+        <a href="../index.html"><img src="../img/fashlogo.svg" alt="Fash"></a>
+      </h1>
+      <!-- モーダル -->
+      <div class="modal">
+        <ul>
+          <li class="top-btn">Top</li>
+          <li>items</li>
+          <li>trends</li>
+          <li>stylings</li>
+          <li>more</li>
+        </ul>
+      </div>
+      <!-- モーダル -->
+      <nav class="mainnav">
+        <ul id="fade-in" class="dropmenu">
+          <li><a href="#">Items</a>
+            <ul>
+              <li><a href="#">Items</a></li>
+              <li><a href="#">Items</a></li>
+              <li><a href="#">Items</a></li>
+              <li><a href="#">Items</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Trends</a>
+            <ul>
+              <li><a href="#">Trends</a></li>
+              <li><a href="#">Trends</a></li>
+              <li><a href="#">Trends</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Stylings</a>
+            <ul>
+              <li><a href="#">Stylings</a></li>
+              <li><a href="#">Stylings</a></li>
+              <li><a href="#">Stylings</a></li>
+            </ul>
+          </li>
+          <li><a href="#">More</a>
+            <ul>
+              <li><a href="#">More</a></li>
+              <li><a href="#">More</a></li>
+              <li><a href="#">More</a></li>
+              <li><a href="#">More</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <nav class="subnav">
+        <ul class="flex-items">
+          <li><a href=""><img src="../img/loupe.png" alt="search"></a></li>
+          <li><a href=""><img src="../img/account_btn.png" alt="account"></a></li>
+          <li><a href=""><img src="../img/shopping_cart_btn.png" alt="cart"></a></li>
+        </ul>
+      </nav>  
+    </header>
+    <main>
+      <div class="flex">
+        <ul>
+          <li class="item active"><img src ="../img/modal/color_white.jpg" alt="colors"></li>
+          <li class="item"><img src ="../img/modal/color_gray.jpg" alt="colors"></li>
+          <li class="item"><img src ="../img/modal/color_black.jpg" alt="colors"></li>
+          <li class="item"><img src ="../img/modal/color_change.jpg" alt="colors"></li>
+        </ul>
+        <div class="text">
+          <div class="item-info">
+            <h2 class="item-title">item-title</h2>
+            <p>itemdescriptionitemdescriptionitemdescription
+              itemdescriptionitemdescriptionitemdescription
+              itemdescriptionitemdescriptionitemdescription</p>
+              <h3 class="price">￥ 10.000</h3>
+            </div>
+            <form>
+              <div class="colors">
+                <label class="white color-btn" >
+                  <input type ="radio" name="color" value="white" required>
+                </label>
+                <label class="gray color-btn">
+                  <input  type ="radio" name="color" value="gray">
+                </label>
+                <label class="black color-btn">
+                  <input type ="radio" name="color" value="black">
+                </label>
+                <label class="red color-btn">
+                  <input type ="radio" name="color" value="red">
+                </label>
+              </div>
+              <div class="size-pick flex-items choices">
+                <label for="size">サイズ:</label>
+                <select id="size">
+                  <option>S</option>
+                  <option selected>M</option>
+                  <option>L</option>
+                </select>
+              </div>
+              <div class="number flex-items choices">
+                <label for="number">数量:</label>
+                <input type="number" value="1" min="1" id="number">
+              </div>
+              <div class="sum choices">
+                <span>小計:</span>
+                <span class="subtotal">￥ 10.000</span>
+              </div>
+              <button type="submit" class="add-cart-btn">
+                カートに入れる
+              </button>
+            </form>
+          </div>
+        </div>
+      <!-- シェアボタン -->
+      <span class="flex-items sns-btn">
+        <div class="fb-share-button" data-href="https://kshirakura.github.io/BooksChange/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkshirakura.github.io%2FBooksChange%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></div>
+        <a data-size="large" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+      </span>
+      <!-- シェアボタン -->
+
+    </main>
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger-menu">
+      <div class="menu-btn"><span></span></div>
+    </div>
+
+    <footer id="footer">
+      <h2>Fash</h2>
+      <p>&copy;Fash</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="../js/ranking-script.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v11.0" nonce="ETaQp8uF"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+</html>
