@@ -187,7 +187,7 @@ header
 }
 
 .copy h2 {
-  width: 200px;
+  width: 300px;
   margin: 0 auto;
   text-align: center;
   font-size: 25px;
@@ -228,8 +228,8 @@ container
 }
 
 .online {
-  height: 300px;
   width: 49%;
+  height: auto;
   position: relative;
 }
 
@@ -241,8 +241,8 @@ container
 }
 
 .iiyasai {
-  height: auto;
   width: 49%;
+  height: auto;
   position: relative;
 }
 
@@ -396,6 +396,7 @@ footer
       width: 49%;
       justify-content: space-between;
     }
+
 
 
     .online_iiyasai h2 {
