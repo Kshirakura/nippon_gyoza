@@ -397,6 +397,12 @@ footer
       justify-content: space-between;
     }
 
+    .online_iiyasai a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
 
 
     .online_iiyasai h2 {
