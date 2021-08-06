@@ -96,10 +96,15 @@ h1, h2, h3, h4 {
 .sns-btn {
   justify-content: center;
   margin-bottom: 60px;
+  line-height: 0;
 }
 
 .sns-btn div {
   margin-right: 20px;
+}
+
+.fb_iframe_widget > span {
+  vertical-align: baseline !important;
 }
 
 /* --------
@@ -113,6 +118,12 @@ h1, h2, h3, h4 {
   line-height: 1;
   z-index: 99;
 }
+
+/* #page-top img {
+  width: 30px;
+  height: 40px;
+} */
+
 #page-top a {
   /* background: #E83828; */
   text-decoration: none;
@@ -122,12 +133,12 @@ h1, h2, h3, h4 {
   text-align: center;
   display: block;
   border-radius: 5%;
-  opacity: 0.9;
+  opacity: 0.7;
   transition: all .3s ease;
 }
 #page-top a:hover {
   text-decoration: none;
-  opacity: .7;
+  opacity: .5;
 }
 
 /* --------
@@ -210,7 +221,7 @@ container
 
 .heart {
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 
 .heart h2 a{
@@ -426,7 +437,7 @@ footer
     .iiyasai {
       width: 100%;
       height: 47%;
-      background-image: url(../img/iiyasai.png);
+      background-image: url(../img/iiyasai.jpg);
       background-size: cover;
     }
 
