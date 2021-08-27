@@ -6,6 +6,13 @@ $(function(){
     }
   });
 
+  //ie対策ツイッター
+  var userAgent = window.navigator.userAgent.toLowerCase();
+  if(userAgent.indexOf('msie') != -1 ||
+        userAgent.indexOf('trident') != -1) {
+          $('.twitter-share-button').hide();
+        }
+
   $('.sound_off').click(function(){
     document.getElementById("overSound1").muted = true;
     document.getElementById("overSound2").muted = true;
