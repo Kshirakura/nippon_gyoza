@@ -422,16 +422,18 @@ policy
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
-  background: var(--white);
+  background-color: var(--white);
 }
 
-.news h1 {
+
+
+.news_container title {
   margin-bottom: 15px;
   color: var(--black);
   font-weight: 70;
 }
 
-.news dl {
+.news_container dl {
   /* display: flex; */
   /* justify-content: space-between; */
   text-align: center;
@@ -560,6 +562,10 @@ footer
       color: var(--black);
     }
 
+    .boxes_container .box2_box3 a:link, .boxes_container .box2_box3 a:visited {
+      color: var(--black);
+    }
+
     .boxes_container .box2_box3 a img {
       object-fit: cover;
       height: 100%;
@@ -569,6 +575,7 @@ footer
     .box2,
     .box3 {
       position: relative;
+
     }
     
     .box2 h2,
@@ -610,11 +617,16 @@ footer
       font-size: 1.5rem;
     }
 
-    .news h2 {
+    .news_container .title {
+      color: var(--black);
+      font-weight: 70;
+    }
+
+    .news_container h2 {
       font-size: 2.4rem;
     }
 
-    .news dl {
+    .news_container dl {
       display: flex;
       flex-wrap: wrap;
       width: 600px;
@@ -624,6 +636,10 @@ footer
       padding: 30px;
       line-height: 2rem;
       border: dashed 1px #ccc;
+    }
+
+    .news_container a:link, .news a:visited {
+      color: var(--black);
     }
 
     .news dt {
