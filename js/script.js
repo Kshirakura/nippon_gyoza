@@ -10,7 +10,7 @@ $(function(){
   var userAgent = window.navigator.userAgent.toLowerCase();
   if(userAgent.indexOf('msie') != -1 ||
         userAgent.indexOf('trident') != -1) {
-          $('.twitter-share-button').hide();
+          $('.sns-btn').hide();
         }
 
   $('.sound_off').click(function(){
