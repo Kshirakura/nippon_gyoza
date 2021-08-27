@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/slick.css"/>
     <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
     <meta property="og:type" content="blog">
     <meta property="og:description" content="ニッポンギョーザは美味しい野菜で作った美味しい餃子をお届けします。">
     <meta property="og:title" content="ニッポンギョーザ">
@@ -18,86 +19,147 @@
     <meta property="og:image" content="https://kshirakura.github.io/nippon_gyoza/img/nippongyoza_ogp.jpg">
     <meta property="og:site_name" content="ニッポンギョーザ">
     <meta property="og:locale" content="ja_JP" />
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'ace3lug',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
   </head>
   <body>
-    <header id="header">
-      <h1 class="site-title"><img src="img/nippongyoza_logo2.svg" alt="nippongyoza_logo"></h1>
-      <!-- ハンバーガーメニュー-->
-      <div class="hamburger-menu">
-        <div class="menu-btn"><span></span></div>
+    <audio id="overSound1" preload="auto" loop>
+      <source src="sounds/sound1.mp3" type="audio/mp3">
+      <source src="sounds/sound1.ogg" type="audio/ogg">
+    </audio>
+    <audio id="overSound2" preload="auto" loop>
+      <source src="sounds/sound2.mp3" type="audio/mp3">
+      <source src="sounds/sound2.ogg" type="audio/ogg">
+    </audio>
+    <audio id="overSound3" preload="auto" loop>
+      <source src="sounds/sound3.mp3" type="audio/mp3">
+      <source src="sound3.ogg" type="audio/ogg">
+    </audio>
+    <audio id="overSound4" preload="auto" loop>
+      <source src="sounds/sound4.mp3" type="audio/mp3">
+      <source src="sounds/sound4.ogg" type="audio/ogg">
+    </audio>
+    <header class="header">
+      <div class="header_container">
+        <h1 class="site-title"><img src="img/nippongyoza_logo2.svg" alt="nippongyoza_logo"></h1>
+        <!-- ハンバーガーメニュー-->
+        <nav class="main_menu">
+          <ul>
+            <li><a class="top-btn" href="#">TOP</a></li>
+            <li><a class="scroll-btn" href="#concept">Concept</a></li>
+            <li><a class="scroll-btn" href="#about">About</a></li>
+            <li><a class="scroll-btn" href="#news">News</a></li>
+            <li><a class="scroll-btn" href="#goods">Goods</a></li>
+          </ul>
+        </nav>
+        <div class="hamburger-menu">
+          <div class="menu-btn"><span></span></div>
+        </div>
       </div>
     </header>
     <main>
-      <div class="gifs">
-        <div class="cabagge gif">
-          <img src="img/gif/cabagge.gif" alt="cabagge_gif">
-        </div>
-        <div class="hakusai gif">
-          <img src="img/gif/hakusai.gif" alt="hakusai_gif">
-        </div>
-        <div class="onion gif">
-          <img src="img/gif/onion.gif" alt="onion_gif">
-        </div>
-        <div class="shiso gif">
-          <img src="img/gif/shiso.gif" alt="shiso_gif">
+      <div class="attention">
+        <div class="attention_container">
+          <h1>※音を出しますか？</h1>
+          <div class="btn close">YES</div>
+          <div class="btn close sound_off">NO</div>
         </div>
       </div>
-      <div class="flex-items">
-        <div class="item">
-          <div class="mainvisual">
-        <img src="img/mainvisual-alpha.png" alt="mainvisual">
-        </div>
-        <div class="steam">
-          <img src="img/steam_3.png" alt="steam">
-        </div>
-        </div>
-        <div class="item">
-          <div class="copy">
-            <h2>野菜がうまいと、<br>餃子は、うまい。</h2>
+      <div class="modal">
+        <div class="modal_container">
+          <div class="close">
+            <i class="far fa-times-circle"></i>
           </div>
-          <div class="shop-name">
-            <h1><img src="img/nippongyoza_logo2.svg" alt="nippongyoza_logo"></h1>
+          <ul>
+            <li><a class="top-btn" href="#">TOP</a></li>
+            <li><a class="scroll-btn" href="#concept">Concept</a></li>
+            <li><a class="scroll-btn" href="#about">About</a></li>
+            <li><a class="scroll-btn" href="#news">News</a></li>
+            <li><a class="scroll-btn" href="#goods">Goods</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero section">
+        <div class="hero_container">
+          <div class="hero_images">
+            <div class="image1 image">
+              <img class="off" src="img/mainvisual/main1-p.jpg" alt="image1_off">
+              <img class="on" src="img/mainvisual/main1.jpg" alt="image1_off">
+            </div>
+            <div class="image2 image">
+              <img class="off" src="img/mainvisual/main2-p.jpg" alt="image2_off">
+              <img class="on" src="img/mainvisual/main2.jpg" alt="image2_off">
+            </div>
+            <div class="image3 image">
+              <img class="off" src="img/mainvisual/main3-p.jpg" alt="image3_off">
+              <img class="on" src="img/mainvisual/main3.jpg" alt="image3_off">
+            </div>
+            <div class="image4 image">
+              <img class="off" src="img/mainvisual/main4-p.jpg" alt="image4_off">
+              <img class="on" src="img/mainvisual/main4.jpg" alt="image4_off">
+            </div>
+          </div>
+          <div class="hero_text">
+            <div class="copy_pc">
+              <h2>野菜がうまいと、<br>餃子は、うまい。</h2>
+            </div>
+            <div class="copy_sp">
+              <h2>野菜が<br>うまいと、<br>餃子は、<br>うまい。</h2>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="container">
-        <div class="flex-items fadeIn">
-          <div class="heart">
+      <div id="concept" class="boxes section">
+        <div class="boxes_container container ">
+          <a href="">
+            <div class="box1 box fadeIn">
+            <img src="img/kodawari.jpg" alt="こだわりイメージ">
+            <h1>餡にこだわり、アリ。</h1>
+          </div>
+          </a>
+          <div class="box2_box3">
             <a href="">
-              <img src="img/kodawari.jpg" alt="こだわりイメージ">
+              <div class="box2 fadeIn box">
+              <img class="sp" src="img/online.png" alt="オンライン購入">
+              <img class="pc" src="img/online-long.png" alt="オンライン購入">
+              <h2>オンライン購入</h2>
+            </div>
             </a>
-            <h2><a href="">餡にこだわり、アリ。</a></h2>
-          </div>
-          <div class="online_iiyasai fadeIn">
-            <div class="online">
-              <a href="">
-                <img src="img/online.png" alt="オンライン購入">
-                <h2>オンライン購入</h2>
-              </a>
-            </div>
-            <div class="iiyasai">
-              <a href="">
-                <img src="img/iiyasai-square.jpg" alt="良い野菜、使ってます">
+            <a href="">
+              <div class="box3 fadeIn box">
+              <img class="sp" src="img/iiyasai-square.jpg" alt="良い野菜、使ってます">
+              <img class="pc" src="img/iiyasai.jpg" alt="オンライン購入">
               <h2>良い野菜、使ってます</h2>
-              </a>
             </div>
+            </a>
           </div>
         </div>
-        <div class="policy fadeIn">
-          <h2>伝統の野菜餃子</h2>
-          <div class="flex-items">
-            <div class="item">
+      </div>
+      <div id="about" class="policy fadeIn section">
+        <div class="policy_container container">
+          <h1 class="title">伝統の野菜餃子</h1>
+          <div class="media_object">
+            <div class="image">
               <img src="img/policy.jpg" alt="policy">
             </div>
-            <div class="item text">
-              <h3>美味しい野菜と、<br>こだわりの餡配分</h3>
+            <div class="text">
+              <h2>美味しい野菜と、<br>こだわりの餡配分</h2>
               <p>ニッポンギョーザの餃子の餡は80%が野菜。最高の食材を使い、何通りもの餡配分を試した末に作られたこだわりの餃子は昔から変わらない美味しさです。</p>
             </div>
           </div>
         </div>
-        <div class="news">
-          <h2>新着情報</h2>
+      </div>
+      <div id="news" class="news section">
+        <div class="news_container container">
+          <h1 class="title">新着情報</h1>
           <dl>
             <dt><a href="">2021.12.10</a></dt>
             <dd><a href="">すごいニュースすごいニュースすごいニュース</a></dd>
@@ -108,38 +170,56 @@
           </dl>
           <a href="">すべて表示</a>
         </div>
-        <div class="recommend">
-          <h2>おすすめ商品</h2>
-          <div class="flex-items">
-            <div class="item">
-              <a href="">
-                <img src="img/recommend/recommend1.jpg" alt="うまい餃子1">
-              <h3>うまい餃子</h3>
+      </div>
+      <div id="goods" class="recomend section">
+        <div class="recommend_container container fadeIn">
+          <h1 class="title">おすすめ商品</h1>
+          <div class="cards">
+            <a href="">
+              <div class="card card1">
+                <div class="image">
+                  <img src="img/recommend/recommend1.jpg" alt="うまい餃子1">
+                </div>
+                <div class="text">
+                  <h2>うまい餃子</h2>
               <p>とても美味しい。とても美味しい。とても美味しい。とても美味しい。</p>
-              </a>
-            </div>
-            <div class="item">
-              <a href="">
-                <img src="img/recommend/recommend2.jpg" alt="うまい餃子2">
-              <h3>うまい餃子</h3>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="card card2">
+                <div class="image">
+                  <img src="img/recommend/recommend2.jpg" alt="うまい餃子2">
+                </div>
+                <div class="text">
+                  <h2>うまい餃子</h2>
               <p>とても美味しい。とても美味しい。とても美味しい。とても美味しい。</p>
-              </a>
-            </div>
-            <div class="item">
-              <a href="">
-                <img src="img/recommend/recommend3.jpg" alt="うまい餃子3">
-              <h3>うまい餃子</h3>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="card card3">
+                <div class="image">
+                  <img src="img/recommend/recommend3.jpg" alt="うまい餃子3">
+                </div>
+                <div class="text">
+                  <h2>うまい餃子</h2>
               <p>とても美味しい。とても美味しい。とても美味しい。とても美味しい。</p>
-              </a>
-            </div>
-            <div class="item">
-              <a href="">
-                <img src="img/recommend/recommend4.jpg" alt="うまい餃子4">
-              <h3>うまい餃子</h3>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="card card4">
+                <div class="image">
+                  <img src="img/recommend/recommend4.jpg" alt="うまい餃子4">
+                </div>
+                <div class="text">
+                  <h2>うまい餃子</h2>
               <p>とても美味しい。とても美味しい。とても美味しい。とても美味しい。</p>
-              </a>
-            </div>
-          </div>
+                </div>
+              </div>
+            </a>
+          </div> <!--recomend_container-->
         </div>
       </div>
 
@@ -156,15 +236,17 @@
     <p id="page-top"><a href="#"><img src="img/go-to-top.svg" alt="to-top"></a></p>
     <!-- TOPボタン -->
 
-    <footer id="footer">
-      <h2><img src="img/nippongyoza_logo2.svg" alt="nippongyoza_logo"></h2>
+    <footer class="footer">
+      <div class="footer_container container">
+        <h2><img src="img/nippongyoza_logo2.svg" alt="nippongyoza_logo"></h2>
       <p>&copy;ニッポンギョーザ</p>
+      </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.inview.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v11.0" nonce="ETaQp8uF"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    
+
   </body>
 </html>
