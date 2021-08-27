@@ -13,13 +13,25 @@ html {
   font-size:62.5%;
 }
 
+:root {
+  --red: #e83828;
+  --white: #f3f3f3;
+  --black: #222;
+}
+
 body {
-  width: 94%;
-  margin: 0 auto;
-  font-family: 'Shippori Mincho B1', serif;
-  background: #f0f0e0;
+  /* width: 94%; */
+  /* margin: 0 auto; */
+  font-family: heisei-kaku-gothic-stdn, sans-serif;
+  background: #222;
   font-size: 1.5rem;
-  color: #222;
+  color: #fff;
+  -webkit-text-size-adjust: 100%;
+}
+
+.container {
+  width: 94%;
+  margin: 0 auto 60px;
 }
 
 main {
@@ -32,7 +44,7 @@ img {
 
 a {
   text-decoration: none;
-  color: #333;
+  color: var(--black);
 }
 
 li {
@@ -48,47 +60,29 @@ h2 {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'RocknRoll One', sans-serif;
+  font-family: nitalago-ruika, sans-serif;
 }
 
-  /* -----------
-  gifs
-  ------------ */
+.title {
+  font-size: 3.0rem;
+  margin-bottom: 15px;
+}
 
-  .gif {
-    position: absolute;
-    z-index: -10;
+.section {
+  margin-bottom: 60px;
+}
 
-  } 
+.box1, .box2, .box3, .card .image{
+  overflow: hidden;
+}
 
-  .gifs img {
-    width: 230px;
-    height: 230px;
-    opacity: 0.2;
-  }
+.box1 img:hover, .box2 img:hover, .box3 img:hover, .card .image img:hover {
+  transition: all 0.6s ease;
+}
 
-  .gifs .cabagge {
-    top: 40px;
-  }
-
-  .gifs .hakusai {
-    top: 430px;
-    right: auto;
-    left: auto;
-  }
-
-  .gifs .onion {
-    right: 0px;
-    top: 180px;
-  }
-
-  .gifs .shiso {
-    right: 0px;
-    top: 550px;
-  }
-
-
-
+.box1 img:hover, .box2 img:hover, .box3 img:hover, .card .image img:hover {
+  transform: scale(1.3) rotate(7deg);
+}
 
 /* --------
 シェアボタン
@@ -97,6 +91,10 @@ h1, h2, h3, h4 {
   justify-content: center;
   margin-bottom: 60px;
   line-height: 0;
+}
+
+.fb-share-button:hover {
+  opacity: 0.8;
 }
 
 .sns-btn div {
@@ -141,6 +139,44 @@ h1, h2, h3, h4 {
   opacity: .5;
 }
 
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  /* display: none; */
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  background-color: transparent;
+  cursor: pointer
+  /* background-color: ; */
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 22px;
+  /* border-radius: 3px; */
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu-btn span:before {
+  top: 9px;
+  
+}
+.menu-btn span:after {
+  top: -7px;
+}
+
+
+
 /* --------
 inview用
 --------*/
@@ -154,145 +190,236 @@ inview用
 }
 
 /* --------
-header 
+modal
 --------*/
-
-#header .site-title img{
-  width: 180px;
-  display: block;
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: -100vh;
+  background: rgba(30, 20, 10, 0.4);
+  z-index: 300;
 }
 
-.flex-items {
+.modal_container {
+  width: 50vw;
+  margin: 30px auto;
+}
+
+.modal_container .close {
+  position: absolute;
+  right: 32px;
+  top: 0px;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.modal_container li a{
+  display: block;
+  color: var(--white);
+  margin-bottom: 20px;
   position: relative;
 }
 
-#header{
+.modal_container li a:after {
+  content: '';
   position: absolute;
-  top: 25px;
-  left: 20px;
-  z-index:20;
+  width: 0%;
+  height: 1px;
+  background: var(--white);
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s ease;
 }
 
-.mainvisual {
-  padding-top: 150px;
+.modal_container li a:hover:after{
+  width: 50%;
+}
+
+/* --------
+sound attention
+--------*/
+.attention {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 400;
+  background: rgba(0,0,0, 0.5);
+  display: none;
+}
+
+.attention_container {
+  width: 30vw;
+  position: absolute;
+  padding: 30px;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  border: solid 1px #fff;
+  border-radius: 3%;
+}
+
+.attention_container div {
+  margin-top: 20px;
+  margin-right: 30px;
+  font-size: 3rem;
+  color: #333;
+  background: #fff;
+  padding: 0 20px;
+  border-radius: 3%;
+  cursor: pointer;
+}
+
+/* --------
+header 
+--------*/
+
+.header {
+  /* background: rgba(180, 180, 180, 0.6); */
+  position: absolute;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  height: 8vh;
+}
+
+
+.header_container {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.header_container .site-title {
+  margin-left: 20px;
+}
+
+.header_container .site-title img {
+  width:min(50vw, 400px);
+}
+
+.header_container .main_menu ul{
+  display: none;
+}
+
+/* --------
+hero 
+--------*/
+
+.hero {
   margin-bottom: 30px;
 }
 
-.steam {
+.hero_container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero_images .on{
+  display: none;
+}
+
+.hero_images .off {
+  height: 25vh;
+  object-fit: cover;
+}
+
+.hero_text {
   position: absolute;
-  animation: steam-up 1.2s linear 0.5s;
-  opacity: 0;
-}
-
-@keyframes steam-up {
-  0% { top: 400px;
-       opacity: 0;}
-  50% { top: 180px;
-       opacity: 1;}
-  100% { top: 0px;
-       opacity: 0;}
-}
-
-.copy {
-  margin-bottom: 60px
-}
-
-.copy h2 {
-  width: 300px;
-  margin: 0 auto;
   text-align: center;
-  font-size: 25px;
-  font-weight: bold;
-  transform: translate(5%, 0);
+  top: 50%;
+  left: 50%;
+  width: 75vw;
+  transform: translate(-50%, -50%);
+  
+}
+
+.move {
+  animation: up 1s ease;
+}
+
+@keyframes up {
+  0% {
+    transform: translate(-50%, 50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity:1;
+  }
+}
+
+.hero_text h2 {
+  font-family: ruika, sans-serif;
+  font-weight: 80;
+  text-align: left;
+  font-size: min(17vw, 140px);
+  white-space: nowrap;
+  line-height: min(24vw, 190px);
+}
+
+.copy_pc {
+  display: none;
 }
 
 .shop-name {
   text-align: center;
-  width: 180px;
-  margin: 0 auto 120px;
+  width: 50%;
+  margin: 30px auto;
 }
 
 /* --------
-container
+boxes
 --------*/
-.container {
-  margin-bottom: 60px;
+.boxes_container .pc {
+  display: none;
 }
 
-.heart {
-  position: relative;
+.boxes_container .box1 {
   margin-bottom: 10px;
+  position: relative;
 }
 
-.heart h2 a{
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #fff;
-  z-index: 20;
+.boxes_container .box1 h1 {
+  position:absolute;
+  top: 20px;
+  left: 20px;
+  color: var(--white);
+  font-size: 2.4rem
 }
 
-.online_iiyasai {
+.boxes_container .box2_box3 {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 60px;
 }
 
-.online {
+.boxes_container .box2_box3 a {
   width: 49%;
-  height: auto;
-  position: relative;
+  display: block;
+  color: var(--white);
 }
 
-.online h2 {
-  font-size: 1.4rem;
-  position: absolute;
-  top: 5px;
-  left: 10px;
-}
+/* --------
+policy
+--------*/
 
-.iiyasai {
-  width: 49%;
-  height: auto;
-  position: relative;
-}
-
-.iiyasai h2 {
-  font-size: 1.4rem;
-  position: absolute;
-  top: 5px;
-  left: 10px;
-}
-
-.policy {
-  margin-bottom: 60px;
-}
-
-.policy h2 {
+.policy_container .image{
   margin-bottom: 15px;
 }
 
-.policy .flex-items {
-  /* display: flex; */
-  align-items: center;
-  justify-content: space-between;
-}
-
-.policy img {
-  margin-bottom: 15px;
-}
 
 .news {
   padding-top: 30px;
   padding-bottom: 30px;
-
-  margin-bottom: 60px;
   text-align: center;
-  background: #ffe;
+  background: var(--white);
 }
 
-.news h2 {
+.news h1 {
   margin-bottom: 15px;
+  color: var(--black);
+  font-weight: 70;
 }
 
 .news dl {
@@ -322,19 +449,23 @@ container
   margin-bottom: 15px;
 }
 
-.recommend .flex-items {
+.recommend_container .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.recommend .item {
+.recommend_container a {
   width: 49%;
   margin-bottom: 30px;
+  display: block;
+  color: var(--white);
 }
 
-.recommend .item img {
-  margin-bottom: 5px;
+
+
+.recommend_container .card .text h2 {
+  margin: 15px 0 15px;
 }
 
 /*--------
@@ -355,112 +486,96 @@ SNSボタン
 /*--------
 footer
 ------ */
-#footer {
+.footer {
   width: 180px;
+  margin-left: 40px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
-      /*--------
-    mainvisual
-    ------ */
-    .mainvisual {
-      padding-top: 150px;
-      margin-bottom: 60px;
-      width: 450px;
-      margin: 0 auto 50px;
-    }
 
-    .copy p{
-      font-size: 4.0rem;
-      width: 400px;
-    }
-
-    .shop-name {
-      font-size: 1.2rem;
-    }
-
-        /*--------
-    container
+  .header .site-title {
+    margin-left: 40px;
+  }
+    /*--------
+    boxes
     ------ */
 
-    .container > .flex-items {
+    .boxes_container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin-bottom: 60px;
-    }
-
-    .heart {
-      width: 48%;
-      margin:0;
-    }
-    
-    .heart h2 {
-      top: 30px;
-      left: 30px;
-      font-size: 3.0rem;
-    }
-    
-    .online_iiyasai {
-      flex-direction:column;
-      margin-bottom: 0;
-      width: 49%;
       justify-content: space-between;
     }
 
-    .online_iiyasai a {
+    .boxes_container .sp {
+      display: none;
+    }
+
+    .boxes_container .pc {
       display: block;
+    }
+
+    .boxes_container > a {
+      width: 49%;
       height: 100%;
+    }
+
+    .boxes_container .box1 {
+      margin-bottom: 0;
+      height: 100%;
+    }
+
+    .boxes_container .box2_box3 {
+      flex-direction: column;
+      width: 49%;
+    }
+
+    .boxes_container .box2_box3 a {
       width: 100%;
+      color: var(--black);
     }
 
+    .box2,
+    .box3 {
+      position: relative;
+    }
+    
+    .box2 h2,
+    .box3 h2 {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    
+    /*--------
+    policy
+    ------ */
 
-
-    .online_iiyasai h2 {
-      top: 24px;
-      left: 24px;
-      font-size: 1.8rem;
+    .policy_container {
+      margin-bottom: 120px;
     }
 
-    .online {
-      width: 100%;
-      height: 47%;
-      background-image: url(../img/online-long.png);
-      background-size: cover;
-    }
-
-    .online img {
-      display: none;
-    }
-
-
-    .iiyasai {
-      width: 100%;
-      height: 47%;
-      background-image: url(../img/iiyasai.jpg);
-      background-size: cover;
-    }
-
-    .iiyasai img {
-      display: none;
-    }
-
-    .policy .flex-items {
+    .policy_container .media_object{
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    
-    .policy .item {
-      width: 48%;
-    }
 
-    .policy h2 {
+    .policy_container .media_object .image,
+    .policy_container .media_object .text {
+      width: 49%;
+    } 
+
+    .policy h1 {
       font-size: 3.0rem;
     }
 
-    .policy h3 {
+    .policy h2 {
       font-size:2.0rem;
+      margin-bottom: 15px;
+    }
+
+    .policy p {
+      font-size: 1.5rem;
     }
 
     .news h2 {
@@ -475,7 +590,7 @@ footer
       justify-content: space-between;
       background: #ffe;
       padding: 30px;
-      line-height: 2.4rem;
+      line-height: 2rem;
       border: dashed 1px #ccc;
     }
 
@@ -513,83 +628,139 @@ footer
 
 @media (min-width: 1025px) {
 
-  body {
+  .container {
     width: 1020px;
     margin: 0 auto;
   }
 
-  .mainvisual {
-    margin: 0 60px 0 0;
-    padding: 0;
+  section {
+    margin-bottom: 120px;
   }
 
-  .steam {
-    position: absolute;
-    animation: steam-up 1.0s linear 0.5s;
-    opacity: 0;
+  .attention {
+    display: block;
+  }
+
+  .header_container {
+    padding-top: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding-bottom: 20px;
+    position: fixed;
+    width: 100%;
   }
   
-  @keyframes steam-up {
-    0% { top: 200px;
-         opacity: 0;}
-    50% { top: 0px;
-         opacity: 1;}
-    100% { top: -200px;
-         opacity: 0;}
+  .menu-btn{
+    display: none;
   }
 
-  .gifs .onion {
-    right: 0px;
-    top: 0px;
+  .header_container .main_menu {
+    margin-left:auto;
+    margin-right: 120px;
   }
 
-  .gifs .shiso {
-    right: 0px;
-    top: 300px;
-  }
-  
-  main > .flex-items {
+  .header_container .main_menu ul{
     display: flex;
-    align-items: center;
-    margin: 90px 0 120px;
-    justify-content: center;
+    margin-left: 50px;
+    align-items: bottom;
+    width: 50vw;
+    justify-content: space-between;
   }
 
-  main > .flex-item .item {
-    width: 49%;
+  .header_container .main_menu li{
+    position: relative;
+  }
+  .header_container .main_menu li:after{
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 120%;
+    height: 0%;
+    bottom: 0;
+    left: -11%;
+    opacity: 0;
+    transition: all 0.3s ease;
   }
 
-  .copy {
-    padding-top: 60px;
+  .header_container .main_menu li:hover a{
+    color: #000;
+    position: relative;
+    z-index: 450;
   }
 
-  .copy h2 {
+  .header_container .main_menu li:hover:after {
+    opacity: 1;
+    height: 110%;
+    border-radius: 2%;
+  }
+
+  .header_container a {
+    color: #fff;
     font-size: 3rem;
-    width: 300px;
-    transform: translate(3%, 0);
+    font-family: nitalago-ruika, sans-serif;
   }
 
 
-
-  .shop-name {
-    margin-right: 0;
-    margin-left: 0;
-    margin: 0 auto;
-    width: 250px;
+  .hero_images {
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+    height: 100vh;
   }
 
-  .shop-name h1 {
-    margin: 0;
-    width: 250px;
+  .hero_images .image {
+    width: 50%;
+    position: relative;
   }
-    /*--------
-    news
-    ------ */
-    /*--------
-    news
-    ------ */
 
+  .hero_images .off {
+    height: 50vh;
+    z-index: 100;
+  }
+
+  .hero_images .on {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: all .3s ease;
+  }
+
+  .hero_images .on:hover {
+    opacity: 1;
+  }
+
+  .hero_text {
+    z-index: 175;
+  }
+
+  .hero_text h2 {
+    font-size: 10vw;
+    line-height: 13vw;
+  }
+
+  .copy_sp {
+    display: none;
+  }
+
+  .copy_pc {
+    position: relative;
+    display: block;
     
+  }
+
+  .recommend_container .cards a {
+    width: 24%;
+  }
+
+  .footer_container h2{
+    width: 200px;
+  }
 
 }
 
